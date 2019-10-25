@@ -104,12 +104,14 @@ public class SerialEvaluationStrategy implements EvaluationStrategy, Serializabl
         double[] values;
         List<Double> objectiveValues = new ArrayList<Double>();
         List<Double> constraintsValues = new ArrayList<Double>();
+        List<Double> objectiveValuesFromFunction = new ArrayList<Double>();
 
         values = individual.getChromosomeAt(0);
 
         if (functions != null) {
             for (int i = 0; i < functions.size(); i++) {
-                objectiveValues.add(functions.get(i).evaluate(values));
+                objectiveValuesFromFunction = functions.get(i).evaluate(values);
+                objectiveValues.addAll(objectiveValuesFromFunction);
             }
             individual.setObjectives(objectiveValues);
         }

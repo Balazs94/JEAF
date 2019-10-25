@@ -31,6 +31,7 @@ package es.udc.gii.common.eaf.problem.objective;
 import es.udc.gii.common.eaf.algorithm.population.Individual;
 import es.udc.gii.common.eaf.config.Configurable;
 import java.io.Serializable;
+import java.util.List;
 import org.apache.commons.configuration.Configuration;
 
 /**
@@ -59,7 +60,7 @@ public abstract class ObjectiveFunction implements Configurable, Serializable {
      * @param values the array of double values to evaluate.
      * @return the objective value of the individual in this objective function.
      */
-    public abstract double evaluate(double[] values);
+    public abstract List<Double> evaluate(double[] values);
     
     public abstract void reset();
 
