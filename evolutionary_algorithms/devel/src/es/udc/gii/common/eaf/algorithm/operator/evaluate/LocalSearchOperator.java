@@ -58,7 +58,6 @@ public class LocalSearchOperator extends EvaluationOperator {
     @Override
     public List<Individual> operate(EvolutionaryAlgorithm algorithm,
             List<Individual> individuals) throws OperatorException {
-
         if (!this.improver.doesEvaluate()) {
             List<Individual> toEvaluate = new ArrayList<Individual>();
             int[] improvedCount = new int[individuals.size()];
@@ -113,7 +112,9 @@ public class LocalSearchOperator extends EvaluationOperator {
                 chosen.copyGenotype(reference);
             }
 
-            algorithm.setFEs(algorithm.getFEs() + toEvaluate.size() + evals);
+            algorithm.setFEs(algorithm.getFEs() + toEvaluate.size() + evals 
+                    - individuals.size()); //The EA class adds the size of the popullation,
+                                            //we need to not count it twice
         } else {
             for (Individual ind : individuals) {
 
