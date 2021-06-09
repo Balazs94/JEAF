@@ -109,6 +109,10 @@ public abstract class LogTool implements Observer, Configurable {
             ConfWarning w = new ConfWarning("Folder", this.folder);
             w.warn();
         }
+        String jobTaskId = System.getenv("SLURM_ARRAY_TASK_ID");
+        System.out.println("SLURM_ARRAY_TASK_ID: " + jobTaskId);
+        if(jobTaskId != null)
+            this.folder += jobTaskId;
         if (conf.containsKey("Name")) {
             this.name = conf.getString("Name");
         } else {
