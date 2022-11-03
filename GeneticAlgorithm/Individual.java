@@ -42,4 +42,14 @@ class Individual {
         }
     }
 
+    public void calcFitness3() {  //maximize
+
+        fitness = 0;
+        for (int i = 0; i < geneLength; i++) {
+            if (genes[i]*genes[i] == 0) {
+                ++fitness;
+            }
+        }
+    }
+
 }

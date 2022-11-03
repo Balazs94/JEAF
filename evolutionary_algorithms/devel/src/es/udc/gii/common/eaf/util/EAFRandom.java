@@ -20,12 +20,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+//package es.udc.gii.common.eaf.util;
 package es.udc.gii.common.eaf.util;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import mpi.MPI;
+
+
 
 /**
  * Random number generator.

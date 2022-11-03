@@ -1,17 +1,33 @@
 package es.udc.gii.common.eaf.algorithm.application.GATest;
 
-import es.udc.gii.common.eaf.algorithm.population.Individual;
-import es.udc.gii.common.eaf.algorithm.population.Population;
+import es.udc.gii.common.eaf.algorithm.EvolutionaryAlgorithm;
+import es.udc.gii.common.eaf.facade.EAFFacade;
+import es.udc.gii.common.eaf.stoptest.StopTest;
+import es.udc.gii.common.eaf.util.EAFRandom;
 
 public class Main {
 
-Population population = new Population();
-Individual fittest;
-Individual secondFittest;
-int generationCount = 0;
+    public static void main(String[] args) {
+        
+    
 
+    EAFFacade facade = new EAFFacade();
+    EvolutionaryAlgorithm algorithm;
+    StopTest stopTest;
+    EAFRandom.init();
+    
+    
+    String eaConfig = SimulationConfiguration.getEaConfigFile();
+    System.out.println("Using EA config file: " + eaConfig);
+    algorithm = facade.createAlgorithm("./" + eaConfig);
+    stopTest = facade.createStopTest("./" + eaConfig);
+    
+    
+    var iniTime = System.currentTimeMillis();
+    facade.resolve(stopTest, algorithm);
 
-
+    
+    }
 }
 
 
