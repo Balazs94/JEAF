@@ -37,7 +37,6 @@ import es.udc.gii.common.eaf.stoptest.StopTest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
-import org.apache.commons.configuration.Configuration;
 
 /*
  * This class represents an evolutionary algorithm. This algorithm it will be used to resolve a

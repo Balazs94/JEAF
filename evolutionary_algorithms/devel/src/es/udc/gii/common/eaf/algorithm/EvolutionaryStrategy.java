@@ -72,4 +72,10 @@ public class EvolutionaryStrategy extends EvolutionaryAlgorithm {
     public void setLambda(int lambda) {
         this.lambda = lambda;
     }
+
+    @Override
+    public void configure(es.udc.gii.common.eaf.config.Configuration conf) {
+        // TODO Auto-generated method stub
+        
+    }
 }
